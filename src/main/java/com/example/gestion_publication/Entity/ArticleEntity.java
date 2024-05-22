@@ -11,8 +11,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ArticleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +21,15 @@ public class ArticleEntity {
     private String contenu;
     private String description;
     private Date date;
+
+    public ArticleEntity(long articleId, String titre, String sous_titre, String contenu, String description, Date date) {
+        this.articleId = articleId;
+        this.titre = titre;
+        this.sous_titre = sous_titre;
+        this.contenu = contenu;
+        this.description = description;
+        this.date = date;
+    }
 
     public long getArticleId() {
         return articleId;
